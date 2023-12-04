@@ -1,0 +1,80 @@
+/* Include the font */
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+
+body, html {
+    margin: 0; 
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif; 
+    color:#e6a74f;
+    background-color: #050B29; 
+}
+
+.container {
+    max-width: 780px;
+    margin: 0 auto; 
+    padding: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Adjusted to center vertically as well */
+}
+
+header h1 {
+    margin: 30px;
+    font-family: 'Satisfy', cursive; 
+    color: #498846; 
+    font-size: 3.8em; 
+    text-align: center; 
+    margin-top: 60px; 
+    margin-bottom: 40px; /* Space after the title */
+}
+
+/* Style the input field and the submit button to be the same width */
+input[type="text"], input[type="submit"] {
+    width: 80%;
+    padding: 10px;
+    margin: 20px auto; 
+    border-radius: 4px; 
+    font-size: 1em;
+    display: block; 
+}
+
+input[type="text"] {
+    border: 2px solid #66C8CB; 
+    background-color: transparent; 
+    color: white; 
+}
+
+input[type="text"]::placeholder {
+    color: rgba(255, 255, 255, 0.7); 
+    text-align: center; 
+    font-size: 0.9em; 
+}
+
+input[type="submit"] {
+    width: 80%; 
+    padding: 10px;
+    margin: 20px auto;
+    border: none;
+    border-radius: 32px;
+    background-color: #F2BC62; 
+    color: #050B29; 
+    cursor: pointer; 
+    text-transform: uppercase; 
+}
+
+input[type="submit"]:hover {
+    background-color: #e6a74f; 
+}
+
+footer {
+    text-align: center;
+    color: #050B29;
+    background-color: #F2BC62;
+    position: fixed; /* Fixed positioning */
+    left: 0; /* Align to the left */
+    bottom: 0; /* Stick to the bottom */
+    width: 100%
+    
+}
