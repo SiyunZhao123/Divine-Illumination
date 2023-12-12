@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Array of Bible verses
     const verses = [
         "For God so loved the world, that he gave his only Son, that whoever believes in him should not perish but have eternal life. - John 3:16",
-        "The Lord is my shepherd; I shall not want. He maketh me to lie down in green pastures: he leadeth me beside the still waters. He restoreth my soul: he leadeth me in the paths of righteousness for his name's sake. Yea, though I walk through the valley of the shadow of death, I will fear no evil: for thou art with me; thy rod and thy staff they comfort me. - Psalm 23:1-4",
         "Charity suffereth long, and is kind; charity envieth not; charity vaunteth not itself, is not puffed up, Doth not behave itself unseemly, seeketh not her own, is not easily provoked, thinketh no evil; Rejoiceth not in iniquity, but rejoiceth in the truth; Beareth all things, believeth all things, hopeth all things, endureth all things.-1Corinthians13:4-7",
         "I can do all things through Christ which strengtheneth me.-philippians4:13",
         "And we know that all things work together for good to them that love God, to them who are the called according to his purpose.-Romans 8:2",
@@ -14,14 +13,53 @@ document.addEventListener('DOMContentLoaded', () => {
         "Come unto me, all ye that labour and are heavy laden, and I will give you rest.-Mattthew11:28",
     ];
 
-    // Extract the 'name' query parameter from the URL
+
+
     const urlParams = new URLSearchParams(window.location.search);
     const name = urlParams.get('name') || 'Guest';
 
-    // Select a random verse
     const randomVerse = verses[Math.floor(Math.random() * verses.length)];
 
-    // Display the name and the verse
     const verseDisplay = document.getElementById('verseDisplay');
-    verseDisplay.innerText = `Blessings ${name}, ${randomVerse}`;
+    verseDisplay.innerHTML = `<div class="personalized-greeting">Dear ${name},</div><div class="verse">${randomVerse}</div>`;
 });
+
+
+
+function createDot() {
+    const dot = document.createElement('div');
+    dot.classList.add('dot');
+  
+    // Set a random size 
+    const size = Math.random() * 11 + 2; 
+    dot.style.width = `${size}px`;
+    dot.style.height = `${size}px`;
+  
+    // Set a random color
+    const colors = ['#E02020', '#FA6400', '#44D7B6', '#6236FF', '#FF5FC2']; 
+    const color = colors[Math.floor(Math.random() * colors.length)];
+    dot.style.backgroundColor = color;
+  
+    // Set a random position 
+    const container = document.getElementById('floating-dots-container');
+    const posX = Math.random() * container.offsetWidth;
+    const posY = Math.random() * container.offsetHeight;
+    dot.style.left = `${posX}px`;
+    dot.style.top = `${posY}px`;
+  
+    // Set a random animation duration between 5 and 10 seconds
+    const animationDuration = Math.random() * 5 + 5;
+    dot.style.animation = `floatAnimation ${animationDuration}s ease-in-out infinite`;
+  
+    container.appendChild(dot);
+  }
+  
+  // Create multiple dots
+  function generateDots(numberOfDots) {
+    for (let i = 0; i < numberOfDots; i++) {
+      createDot();
+    }
+  }
+  
+  // Call generateDots  number of dots
+  generateDots(20); 
