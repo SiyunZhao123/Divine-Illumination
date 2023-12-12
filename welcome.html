@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Divine Illumination</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('images/BG.png'); 
+            background-size: cover;
+            background-position: center;
+            height: 100vh; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        #letterDisplay {
+            font-family: 'Righteous', cursive;
+            font-size: 148px; 
+            color: #FFE9AC; 
+            -webkit-text-stroke: 5px #FA8700; 
+            text-shadow: 0 5px 8px rgba(26, 3, 49, 0.66); 
+            letter-spacing: 0.1em; 
+            margin-bottom: 20px;
+        }
+
+        
+        #distanceSlider {
+            width: 50%; 
+            -webkit-appearance: none;  
+            appearance: none;
+            height: 15px;
+            background: #ddd;
+            outline: none;
+            opacity: 0.7; 
+            -webkit-transition: .2s; 
+            transition: opacity .2s;
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        #distanceSlider:hover {
+            opacity: 1; 
+        }
+
+        #distanceSlider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 25px;
+            height: 25px;
+            background: #4CAF50; 
+            cursor: pointer;
+        }
+
+        #distanceSlider::-moz-range-thumb {
+            width: 25px; 
+            height: 25px; 
+            background: #4CAF50; 
+            cursor: pointer; 
+        }
+    </style>
+</head>
+<body>
+    <div id="letterDisplay"></div>
+    <input type="range" id="distanceSlider" min="0" max="150" value="150">
+
+    <script>
+        const letters = "GOD LOVE YOU";
+        const slider = document.getElementById("distanceSlider");
+        const display = document.getElementById("letterDisplay");
+
+        slider.oninput = function() {
+            const distance = this.value;
+            const numLettersToShow = Math.floor((150 - distance) / 10);
+            display.textContent = letters.substring(0, numLettersToShow);
+        };
+        
+    </script>
+</body>
+</html>
+

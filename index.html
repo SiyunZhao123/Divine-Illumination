@@ -2,14 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Christmas Card</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles1.css">
     <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="star"></div>
+    <div id="floating-dots-container"></div> 
     <div class="container">
       <header>
-        <h1>Christ the Savior is Born</h1>
+        <h1>Christ the</h1> 
       </header>
       <main>
         <form id="nameForm" action="verse.html" method="GET">
@@ -17,6 +20,12 @@
             <input type="submit" value="Get my Bible verse">
         </form>        
         <div id="verseDisplay"></div>
+        <div id="manger-container">
+            <img src="images/manger.png" alt="Manger Background" />
+            <img src="images/babyChrist.png" alt="Manger with Baby" class="manger-baby" />
+            <div class="halo"></div>
+        </div>
+        
       </main>
       <footer>
         <p>&copy; Milton Missionary Baptist Church</p>
