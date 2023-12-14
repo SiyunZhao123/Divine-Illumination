@@ -54,3 +54,20 @@ generateDots(20);
 
 
 
+var music = document.getElementById('background-music');
+var playPauseButton = document.getElementById('play-pause-button');
+var playIcon = playPauseButton.querySelector('.play-icon');
+var pauseIcon = playPauseButton.querySelector('.pause-icon');
+
+playPauseButton.addEventListener('click', function() {
+  if (music.paused) {
+    music.play();
+    playIcon.style.display = 'none';
+    pauseIcon.style.display = 'block';
+  } else {
+    music.pause();
+    playIcon.style.display = 'block';
+    pauseIcon.style.display = 'none';
+  }
+});
+
